@@ -7,20 +7,20 @@ const { title, description, name, promt, id, icon } = Astro.props;
   name={name}
   id={id}
   value={promt}
-  class="hidden peer"
+  class="peer hidden"
   required=""
 />
+
 <label
   for={id}
-  class="inline-flex items-center justify-between w-full h-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+  class="inline-flex justify-between w-full h-full p-3 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
 >
-  <div class="flex">
+  <div class="flex items-center">
     <div>
       <Fragment set:html={icon} />
     </div>
     <div class="ml-5">
-      <div class="w-full text-lg font-semibold">{title}</div>
-      <div class="w-full text-sm">{description}</div>
+      <div class="w-full text-sm font-semibold">{title}</div>
     </div>
   </div>
 </label>

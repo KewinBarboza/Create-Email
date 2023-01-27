@@ -4,91 +4,105 @@ import Layout from "../components/Layout.astro";
 ---
 
 <Layout>
-  <div
-    class="bg-slate-50 dark:bg-slate-800 p-5 border-b-2 border-slate-900 px-36"
-  >
-    <h1
-      class="my-9 text-center text-5xl font-medium text-gray-900 dark:text-white"
-    >
-      Create Email
-    </h1>
+  <div class="p-5 px-52">
+    <section class="flex justify-between items-center my-9 mb-20">
+      <div class="pr-3">
+        <h1 class="text-5xl mb-2 font-medium text-gray-900 dark:text-white">
+          Create Email
+        </h1>
+        <p class="text-gray-100 mb-4">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+        <p class="text-gray-400">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+          recusandae mollitia harum vero dolorum sapiente
+        </p>
+      </div>
+      <div class="bg-gray-800 p-7 rounded-full">
+        <svg
+          width="68px"
+          height="68px"
+          stroke-width="1.67"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          color="#1a88ff"
+          ><path
+            d="M7 9l5 3.5L17 9"
+            stroke="#1a88ff"
+            stroke-width="1.67"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path><path
+            d="M2 17V7a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2z"
+            stroke="#1a88ff"
+            stroke-width="1.67"></path></svg
+        >
+      </div>
+    </section>
     <Form />
   </div>
-  <div class="px-36 mt-20">
-    <div
-      class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
-    >
-      <div
-        class="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600"
-      >
-        <p class="text-white text-lg">Resultado</p>
-        <div>
+  <h3 class="mt-9 px-52 text-xl font-medium text-gray-900 dark:text-white">
+    Resultados
+  </h3>
+  <div class="p-5 px-52">
+    <ul>
+      <li class="py-10 border-y-2 px-3 border-gray-600">
+        <pre
+          contenteditable="true"
+          class="text-lg break-normal font-inherit whitespace-pre-wrap cursor-text focus:outline-none focus:ring p-3 text-gray-500 border-2 border-gray-900 rounded-lg dark:hover:text-gray-300 hover:text-gray-600 dark:text-gray-400 dark:hover:bg-gray-700">
+Gracias por hacer el esfuerzo adicional de pagarme. Aprecio de verdad que estés dispuesto a desvivirte por cumplir el acuerdo al que llegamos hace años.
+        </pre>
+        <div class="mt-4 gap-2">
           <button
             type="button"
-            data-tooltip-target="tooltip-fullscreen"
-            class="p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
+            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >Copiar</button
           >
-            <svg
-              width="28px"
-              height="28px"
-              stroke-width="1.67"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              color="#1a88ff"
-              ><g
-                clip-path="url(#restart_svg__clip0_1735_6488)"
-                stroke="#1a88ff"
-                stroke-width="1.67"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path
-                  d="M6.677 20.567C2.531 18.021.758 12.758 2.717 8.144 4.875 3.06 10.745.688 15.829 2.846c5.084 2.158 7.456 8.029 5.298 13.113a9.954 9.954 0 01-3.962 4.608"
-                ></path><path d="M17 16v4.4a.6.6 0 00.6.6H22M12 22.01l.01-.011"
-                ></path></g
-              ><defs
-                ><clipPath id="restart_svg__clip0_1735_6488"
-                  ><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath
-                ></defs
-              ></svg
-            >
-          </button>
           <button
             type="button"
-            data-tooltip-target="tooltip-fullscreen"
-            class="p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
+            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >Guardar</button
           >
-            <!--?xml version="1.0" encoding="UTF-8"?-->
-            <svg
-              width="28px"
-              height="28px"
-              stroke-width="1.67"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              color="#1a88ff"
-              ><path
-                d="M19.4 20H9.6a.6.6 0 01-.6-.6V9.6a.6.6 0 01.6-.6h9.8a.6.6 0 01.6.6v9.8a.6.6 0 01-.6.6z"
-                stroke="#1a88ff"
-                stroke-width="1.67"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path><path
-                d="M15 9V4.6a.6.6 0 00-.6-.6H4.6a.6.6 0 00-.6.6v9.8a.6.6 0 00.6.6H9"
-                stroke="#1a88ff"
-                stroke-width="1.67"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path></svg
-            >
-          </button>
         </div>
-      </div>
-      <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
-        <textarea
-          id="editor"
-          rows="8"
-          class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
-        ></textarea>
-      </div>
-    </div>
+      </li>
+      <li class="py-10 border-y-2 px-3 border-gray-600">
+        <pre
+          contenteditable="true"
+          class="text-lg break-normal font-inherit whitespace-pre-wrap cursor-text focus:outline-none focus:ring p-3 text-gray-500 border-2 border-gray-900 rounded-lg dark:hover:text-gray-300 hover:text-gray-600 dark:text-gray-400 dark:hover:bg-gray-700">
+Gracias por hacer el esfuerzo adicional de pagarme. Aprecio de verdad que estés dispuesto a desvivirte por cumplir el acuerdo al que llegamos hace años.
+        </pre>
+        <div class="mt-4 gap-2">
+          <button
+            type="button"
+            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >Copiar</button
+          >
+          <button
+            type="button"
+            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >Guardar</button
+          >
+        </div>
+      </li>
+      <li class="py-10 border-y-2 px-3 border-gray-600">
+        <pre
+          contenteditable="true"
+          class="text-lg break-normal font-inherit whitespace-pre-wrap cursor-text focus:outline-none focus:ring p-3 text-gray-500 border-2 border-gray-900 rounded-lg dark:hover:text-gray-300 hover:text-gray-600 dark:text-gray-400 dark:hover:bg-gray-700">
+Gracias por hacer el esfuerzo adicional de pagarme. Aprecio de verdad que estés dispuesto a desvivirte por cumplir el acuerdo al que llegamos hace años.
+        </pre>
+        <div class="mt-4 gap-2">
+          <button
+            type="button"
+            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >Copiar</button
+          >
+          <button
+            type="button"
+            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >Guardar</button
+          >
+        </div>
+      </li>
+    </ul>
   </div>
 </Layout>
