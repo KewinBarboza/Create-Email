@@ -1,0 +1,76 @@
+---
+import CardRadio from "../components/CardRadio.astro";
+
+const OPTIONS = [
+  {
+    title: "Correo electrónico corporativo",
+    description:
+      "Este tipo de correo se utiliza de forma más profesional, por personas o grupos de personas que se comunican a través de ellos con fines institucionales.",
+    icon: `<?xml version="1.0" encoding="UTF-8"?><svg width="48px" height="48px" stroke-width="1.29" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#1a88ff"><path d="M7 9.01l.01-.011M11 9.01l.01-.011M7 13.01l.01-.011M11 13.01l.01-.011M7 17.01l.01-.011M11 17.01l.01-.011M15 21H3.6a.6.6 0 01-.6-.6V5.6a.6.6 0 01.6-.6H9V3.6a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6V9m0 12h5.4a.6.6 0 00.6-.6V9.6a.6.6 0 00-.6-.6H15m0 12v-4m0-8v4m0 0h2m-2 0v4m0 0h2" stroke="#1a88ff" stroke-width="1.29" stroke-linecap="round" stroke-linejoin="round"></path></svg>`,
+    promt: "",
+    name: "options-email",
+    id: "corporativo",
+  },
+  {
+    title: "Correo electronico personal",
+    description:
+      "En este tipo de correo no existen reglas estrictas, pues ¡eres dueño de tu propio espacio! Y es decisión personal cómo manejarlo. Este correo electrónico es el adecuado para atender asuntos que nada tengan que ver con lo laboral e institucional.",
+    icon: `<?xml version="1.0" encoding="UTF-8"?><svg width="48px" height="48px" stroke-width="1.29" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#1a88ff"><path d="M5 20v-1a7 7 0 017-7v0a7 7 0 017 7v1M12 12a4 4 0 100-8 4 4 0 000 8z" stroke="#1a88ff" stroke-width="1.29" stroke-linecap="round" stroke-linejoin="round"></path></svg>`,
+    promt: "",
+    name: "options-email",
+    id: "personal",
+  },
+  {
+    title: "Correos electrónicos relacionales",
+    description:
+      "Este tipo de correo es utilizado con el fin de conectar, de crear una buena relación entre la marca y su público.",
+    icon: `<?xml version="1.0" encoding="UTF-8"?><svg width="48px" height="48px" stroke-width="1.29" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#1a88ff"><path d="M1 20v-1a7 7 0 017-7v0a7 7 0 017 7v1" stroke="#1a88ff" stroke-width="1.29" stroke-linecap="round"></path><path d="M13 14v0a5 5 0 015-5v0a5 5 0 015 5v.5" stroke="#1a88ff" stroke-width="1.29" stroke-linecap="round"></path><path d="M8 12a4 4 0 100-8 4 4 0 000 8zM18 9a3 3 0 100-6 3 3 0 000 6z" stroke="#1a88ff" stroke-width="1.29" stroke-linecap="round" stroke-linejoin="round"></path></svg>`,
+    promt: "",
+    name: "options-email",
+    id: "relacionales",
+  },
+  {
+    title: "Correos electrónicos promocionales",
+    description:
+      "Los correos electrónicos promocionales, como su nombre lo indica, se utilizan para promocionar, sin que esto signifique necesariamente una venta.",
+    icon: `<?xml version="1.0" encoding="UTF-8"?><svg width="48px" height="48px" stroke-width="1.29" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#1a88ff"><path d="M20 12v9.4a.6.6 0 01-.6.6H4.6a.6.6 0 01-.6-.6V12M21.4 7H2.6a.6.6 0 00-.6.6v3.8a.6.6 0 00.6.6h18.8a.6.6 0 00.6-.6V7.6a.6.6 0 00-.6-.6zM12 22V7M12 7H7.5a2.5 2.5 0 110-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke="#1a88ff" stroke-width="1.29" stroke-linecap="round" stroke-linejoin="round"></path></svg>`,
+    promt: "",
+    name: "options-email",
+    id: "promocionales",
+  },
+  {
+    title: "Correos electrónicos transaccionales",
+    description:
+      "Este tipo de correo electrónico sí tiene la función principal de realizar transacciones entre la marca y el consumidor, generalmente iniciadas por este último.",
+    icon: `<?xml version="1.0" encoding="UTF-8"?><svg width="48px" height="48px" stroke-width="1.29" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#1a88ff"><path d="M17.5 8L14 11.5l3.5 3.5M6 8l3.5 3.5L6 15" stroke="#1a88ff" stroke-width="1.29" stroke-linecap="round" stroke-linejoin="round"></path></svg>`,
+    promt: "",
+    name: "options-email",
+    id: "transaccionales",
+  },
+];
+---
+
+<form class="flex justify-center flex-col">
+  <ul class="grid w-full gap-6 place-content-stretch md:grid-cols-3">
+    {
+      OPTIONS.map(({ title, description, name, promt, id, icon }) => (
+        <li>
+          <CardRadio
+            title={title}
+            description={description}
+            name={name}
+            promt={promt}
+            id={id}
+            icon={icon}
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <button
+    type="submit"
+    class="px-5 mx-auto py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800 my-6"
+  >
+    Crear correo
+  </button>
+</form>
