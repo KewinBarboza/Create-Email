@@ -1,10 +1,9 @@
 import { CardRadio } from './CardRadio.jsx'
-import { OPTIONS, TONE } from '../constants'
+import { OPTIONS, TONE } from '@constants'
 import { useState } from 'react'
 import { ListEmails } from './ListEmails.jsx'
 
-const COHERE_API_KEY = 'a0Ivb7PHmXIXq9Xd0x8UPow47Ul3w8upUiE5Tqea'
-const COHERE_API_GENERATE_URL = 'https://api.cohere.ai/generate'
+
 
 export function Form () {
   const [emails, setEmails] = useState([])
