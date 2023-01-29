@@ -1,5 +1,5 @@
 ---
-import Form from "../components/Form.astro";
+import { Form } from "../components/Form.jsx";
 import Layout from "../components/Layout.astro";
 ---
 
@@ -39,70 +39,6 @@ import Layout from "../components/Layout.astro";
         >
       </div>
     </section>
-    <Form />
-  </div>
-  <h3 class="mt-9 px-52 text-xl font-medium text-gray-900 dark:text-white">
-    Resultados
-  </h3>
-  <div class="p-5 px-52">
-    <ul>
-      <li class="py-10 border-y-2 px-3 border-gray-600">
-        <pre
-          contenteditable="true"
-          class="text-lg break-normal font-inherit whitespace-pre-wrap cursor-text focus:outline-none focus:ring p-3 text-gray-500 border-2 border-gray-900 rounded-lg dark:hover:text-gray-300 hover:text-gray-600 dark:text-gray-400 dark:hover:bg-gray-700">
-Gracias por hacer el esfuerzo adicional de pagarme. Aprecio de verdad que estés dispuesto a desvivirte por cumplir el acuerdo al que llegamos hace años.
-        </pre>
-        <div class="mt-4 gap-2">
-          <button
-            type="button"
-            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-            >Copiar</button
-          >
-          <button
-            type="button"
-            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-            >Guardar</button
-          >
-        </div>
-      </li>
-      <li class="py-10 border-y-2 px-3 border-gray-600">
-        <pre
-          contenteditable="true"
-          class="text-lg break-normal font-inherit whitespace-pre-wrap cursor-text focus:outline-none focus:ring p-3 text-gray-500 border-2 border-gray-900 rounded-lg dark:hover:text-gray-300 hover:text-gray-600 dark:text-gray-400 dark:hover:bg-gray-700">
-Gracias por hacer el esfuerzo adicional de pagarme. Aprecio de verdad que estés dispuesto a desvivirte por cumplir el acuerdo al que llegamos hace años.
-        </pre>
-        <div class="mt-4 gap-2">
-          <button
-            type="button"
-            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-            >Copiar</button
-          >
-          <button
-            type="button"
-            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-            >Guardar</button
-          >
-        </div>
-      </li>
-      <li class="py-10 border-y-2 px-3 border-gray-600">
-        <pre
-          contenteditable="true"
-          class="text-lg break-normal font-inherit whitespace-pre-wrap cursor-text focus:outline-none focus:ring p-3 text-gray-500 border-2 border-gray-900 rounded-lg dark:hover:text-gray-300 hover:text-gray-600 dark:text-gray-400 dark:hover:bg-gray-700">
-Gracias por hacer el esfuerzo adicional de pagarme. Aprecio de verdad que estés dispuesto a desvivirte por cumplir el acuerdo al que llegamos hace años.
-        </pre>
-        <div class="mt-4 gap-2">
-          <button
-            type="button"
-            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-            >Copiar</button
-          >
-          <button
-            type="button"
-            class="text-gray-700 hover:text-white border-2 border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-white dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-            >Guardar</button
-          >
-        </div>
-      </li>
-    </ul>
+    <Form client:visible />
   </div>
 </Layout>
