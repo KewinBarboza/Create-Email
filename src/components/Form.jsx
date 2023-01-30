@@ -3,9 +3,9 @@ import { useCreateEmail } from '@hooks/useCreateEmail'
 
 import { CardRadio } from '@components/CardRadio.jsx'
 import { ListEmails } from '@components/ListEmails.jsx'
-import Input from '@components/Input.jsx'
-import TextArea from '@components/TextArea.jsx'
-import ContainerStep from '@components/ContainerStep.jsx'
+import { Input } from '@components/Input.jsx'
+import { TextArea } from '@components/TextArea.jsx'
+import { ContainerStep } from '@components/ContainerStep.jsx'
 
 export function Form() {
 	const { handleSubmit, isLoading, emails, error } = useCreateEmail()

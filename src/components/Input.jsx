@@ -1,6 +1,6 @@
 import { Label } from './Label'
 
-export default function Input({ id, label, type = 'text', placeholder, nameInput }) {
+export function Input({ id, label, type = 'text', placeholder, nameInput }) {
 	return (
 		<div className='mb-4 w-full'>
 			<Label htmlFor={id} title={label} />

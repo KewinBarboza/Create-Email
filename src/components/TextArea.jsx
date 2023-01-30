@@ -1,4 +1,4 @@
-export default function TextArea({ id, label, placeholder, nameInput }) {
+export function TextArea({ id, label, placeholder, nameInput }) {
 	return (
 		<div className='mb-4 w-full'>
 			<label htmlFor={id} className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'>
