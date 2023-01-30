@@ -1,44 +1,10 @@
 ---
-import { Form } from "@components/Form.jsx";
-import Layout from "@components/Layout.astro";
+import { Form } from '@components/Form.jsx'
+import Hero from '@components/Hero.astro'
+import Layout from '@components/Layout.astro'
 ---
 
 <Layout>
-  <div class="p-5 px-52">
-    <section class="flex justify-between items-center my-9 mb-20">
-      <div class="pr-3">
-        <h1 class="text-5xl mb-2 font-medium text-gray-900 dark:text-white">
-          Create Email
-        </h1>
-        <p class="text-gray-100 mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-        <p class="text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-          recusandae mollitia harum vero dolorum sapiente
-        </p>
-      </div>
-      <div class="bg-gray-800 p-7 rounded-full">
-        <svg
-          width="68px"
-          height="68px"
-          stroke-width="1.67"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          color="#1a88ff"
-          ><path
-            d="M7 9l5 3.5L17 9"
-            stroke="#1a88ff"
-            stroke-width="1.67"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path><path
-            d="M2 17V7a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2z"
-            stroke="#1a88ff"
-            stroke-width="1.67"></path></svg
-        >
-      </div>
-    </section>
-    <Form client:visible />
-  </div>
+	<Hero />
+	<Form client:visible />
 </Layout>
