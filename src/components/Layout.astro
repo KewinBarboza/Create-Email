@@ -1,5 +1,6 @@
 ---
 import BtnDarkMode from './BtnDarkMode.astro'
+import Footer from './Footer.astro'
 ---
 
 <html lang='en' class='dark'>
@@ -13,7 +14,7 @@ import BtnDarkMode from './BtnDarkMode.astro'
 
 	<body class='xl:mx-54 mx-auto dark:bg-gray-900 md:mx-10 lg:mx-36 2xl:mx-72'>
 		<nav
-			class='mx-5 flex items-center justify-between border-b border-blue-100 py-1 dark:border-b-gray-700 md:mx-20 lg:mx-24 xl:mx-48'
+			class='mx-5 mt-4 flex items-center justify-between rounded-full border border-blue-100 px-3 py-1 shadow-sm dark:border-gray-700 md:mx-20 lg:mx-24 xl:mx-56'
 		>
 			<p class='font-sans font-bold text-gray-800 dark:text-white'>C-email</p>
 			<BtnDarkMode />
@@ -22,6 +23,7 @@ import BtnDarkMode from './BtnDarkMode.astro'
 		<div class='px-5 pb-5 pt-2 md:px-20 lg:px-24 xl:px-48'>
 			<slot />
 		</div>
+		<Footer />
 	</body>
 </html>
 
