@@ -8,7 +8,7 @@ import { TextArea } from '@components/TextArea.jsx'
 import { ContainerStep } from '@components/ContainerStep.jsx'
 
 export function Form() {
-	const { handleSubmit, isLoading, emails, error } = useCreateEmail()
+	const { handleSubmit, isLoading, emails, error, prompt } = useCreateEmail()
 	return (
 		<>
 			<form onSubmit={handleSubmit} className='flex w-full flex-col'>
@@ -44,7 +44,7 @@ export function Form() {
 				<button
 					disabled={isLoading}
 					type='submit'
-					className={`ml-10 py-2.5 px-5 text-sm font-medium ${
+					className={`py-2.5 px-5 text-sm font-medium ${
 						isLoading ? 'bg-gray-500 hover:bg-gray-500 ' : 'bg-blue-700 hover:bg-blue-800 '
 					} my-6 rounded-lg  text-center text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900`}
 				>
@@ -52,7 +52,7 @@ export function Form() {
 				</button>
 			</form>
 
-			<ListEmails content={emails} />
+			<ListEmails content={emails} prompt={prompt} />
 		</>
 	)
 }
