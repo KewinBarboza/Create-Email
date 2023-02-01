@@ -5,6 +5,7 @@ export function useCreateEmail() {
 	const [emails, setEmails] = useState(null)
 	const [isLoading, setIsLoading] = useState(false)
 	const [error, setError] = useState(false)
+	const [prompt, setPrompt] = useState(null)
 
 	const getValueInput = (e, nameInput) => e.target[nameInput].value
 	const validatePrompt = (prompt) => {
@@ -21,11 +22,11 @@ export function useCreateEmail() {
 	const sendPrompt = async (prompt) => {
 		try {
 			const result = await getEmail(prompt)
-			setEmails(result)
 			window.scroll({
 				bottom: 0,
 				behavior: 'smooth'
 			})
+			return result
 		} catch (error) {
 			showError('An error occurred try again.')
 			console.log(error)
@@ -42,6 +43,7 @@ export function useCreateEmail() {
 			tone: getValueInput(e, 'tone')
 		}
 
+		setPrompt(prompt)
 		if (validatePrompt(prompt)) {
 			showError('All fields are required')
 			return
@@ -49,9 +51,10 @@ export function useCreateEmail() {
 
 		setEmails(null)
 		setIsLoading(true)
-		await sendPrompt(prompt)
+		const result = await sendPrompt(prompt)
+		setEmails(result)
 
 		setIsLoading(false)
 	}
-	return { handleSubmit, emails, isLoading, error }
+	return { handleSubmit, emails, isLoading, error, prompt, sendPrompt }
 }
