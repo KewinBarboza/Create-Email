@@ -5,7 +5,7 @@
 
 #### Design Your E-mails with Artificial Intelligence
 
-🔗 [pagina web](https://cemail.kewinbarboza.com)
+🔗 [pagina web](https://ctext.kewinbarboza.com)
 
 ### Tecnologías
 * Astro Js
