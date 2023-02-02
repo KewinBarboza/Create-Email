@@ -1,7 +1,12 @@
 // const { PUBLIC_URL_API_COHERE, SECRET_PASSWORD_COHERE } = import.meta.env
 const { PUBLIC_URL_API_COHERE, PUBLIC_PASSWORD_COHERE } = import.meta.env
 
-export const getEmail = async ({ typeEmail, descriptionMessage, tone, forMessage }) => {
+export const getText = async ({ typeEmail, descriptionMessage, tone, forMessage }) => {
+	const prompt = typeEmail
+		? `write an ${typeEmail} email for ${forMessage} narrating ${descriptionMessage} with a ${tone}`
+		: `write a description with a tone ${tone} of a ${forMessage} with the following characteristics ${descriptionMessage}`
+
+	console.log(prompt)
 	const result = await fetch(PUBLIC_URL_API_COHERE, {
 		method: 'POST',
 		headers: {
@@ -12,7 +17,7 @@ export const getEmail = async ({ typeEmail, descriptionMessage, tone, forMessage
 		},
 		body: JSON.stringify({
 			model: 'command-xlarge-nightly',
-			prompt: `write an ${typeEmail} email for ${forMessage} narrating ${descriptionMessage} with a ${tone}`,
+			prompt,
 			max_tokens: 200,
 			temperature: 0.9,
 			k: 0,
