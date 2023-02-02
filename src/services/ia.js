@@ -6,7 +6,6 @@ export const getText = async ({ typeEmail, descriptionMessage, tone, forMessage 
 		? `write an ${typeEmail} email for ${forMessage} narrating ${descriptionMessage} with a ${tone}`
 		: `write a description with a tone ${tone} of a ${forMessage} with the following characteristics ${descriptionMessage}`
 
-	console.log(prompt)
 	const result = await fetch(PUBLIC_URL_API_COHERE, {
 		method: 'POST',
 		headers: {
