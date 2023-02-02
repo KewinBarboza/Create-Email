@@ -1,4 +1,4 @@
-import { Label } from './Label'
+import { Label } from '@components/Label'
 
 export function CardRadio({ options = [], label }) {
 	return (
