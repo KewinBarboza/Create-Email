@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useCreateEmail } from '@hooks/useCreateEmail'
+import { IconCopy, IconRefresh, IconTranslate } from '@components/icons'
 
 export function ListEmails({ content, prompt }) {
 	const [copy, setCopy] = useState('Copy')
@@ -42,36 +43,39 @@ export function ListEmails({ content, prompt }) {
 		<section>
 			{content && (
 				<>
-					<h3 className='mt-9 px-52 text-center text-xl font-medium text-gray-900 dark:text-white'>
+					<h3 className='mt-9 text-left text-xl font-medium text-gray-900 dark:text-white'>
 						Generated mail result
 					</h3>
-					<article className='py-10 px-3'>
-						<pre className='font-inherit cursor-text whitespace-pre-wrap break-normal rounded-lg border border-gray-100 p-3  text-lg text-gray-500 hover:bg-gray-200 hover:text-gray-600 focus:outline-none focus:ring dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300'>
+					<article className='pt-5 pb-10'>
+						<pre className='font-inherit cursor-text whitespace-pre-wrap break-normal rounded-lg border border-gray-100 p-3 text-lg  text-gray-500 shadow-sm hover:bg-gray-200 hover:text-gray-600 focus:outline-none focus:ring dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300'>
 							{textContent}
 						</pre>
-						{errorTranslate && <p className='m-0 font-bold text-red-500'>Try less characters</p>}
-						<div className='mt-4 gap-2'>
+						{errorTranslate && <p className='m-0 font-bold text-red-500'>{errorTranslate}</p>}
+						<div className='mt-4 flex gap-2'>
 							<button
 								onClick={() => copyEmail(textContent)}
 								type='button'
-								className='mr-2 mb-2 rounded-lg bg-gray-100 px-5 py-1 text-center text-sm text-gray-700 shadow-md hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:text-white  dark:shadow-sm dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-800'
+								className='mr-2 mb-2 flex items-center gap-2 rounded-lg bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-blue-500 hover:fill-white hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:text-white  dark:shadow-sm dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800'
 							>
+								<IconCopy />
 								{copy}
 							</button>
 							<a
 								target='_blank'
 								rel='noreferrer'
 								href={`https://www.deepl.com/es/translator#en/es/${textContent}`}
-								className='mr-2 mb-2 rounded-lg bg-gray-100 px-5 py-1 text-center text-sm text-gray-700 shadow-md  hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700  dark:text-white dark:shadow-sm dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-800'
+								className='mr-2 mb-2 flex items-center gap-2 rounded-lg bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-blue-500  hover:fill-white hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700  dark:text-white dark:shadow-sm dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800'
 							>
-								translate in DeepL
+								<IconTranslate />
+								Translate in DeepL
 							</a>
 							<button
 								disabled={loadingChangeContent}
 								onClick={() => changeResult()}
 								type='button'
-								className='mr-2 mb-2 rounded-lg bg-gray-100 px-5 py-1 text-center text-sm text-gray-700 shadow-md hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:text-white  dark:shadow-sm dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-800'
+								className='mr-2 mb-2 flex items-center gap-2 rounded-lg bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-blue-500 hover:fill-white hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:text-white  dark:shadow-sm dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800'
 							>
+								<IconRefresh />
 								{loadingChangeContent ? 'loading...' : 'change result'}
 							</button>
 						</div>
