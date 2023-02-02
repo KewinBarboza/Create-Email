@@ -1,7 +1,7 @@
-![image](https://user-images.githubusercontent.com/32785129/216161405-d63547cf-ef33-4e05-891f-348b27fdc0c3.png)
+![image](https://user-images.githubusercontent.com/32785129/216431123-a05a7505-6639-470e-82c7-1e3300cae765.png)
 
 
-# C-email
+# C-text
 
 #### Design Your E-mails with Artificial Intelligence
 
