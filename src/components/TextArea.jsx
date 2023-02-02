@@ -5,7 +5,7 @@ export function TextArea({ id, label, placeholder, nameInput }) {
 				{label}
 			</label>
 			<div className='relative'>
-				<div className='pointer-events-none absolute inset-y-0 left-0 flex items-start pt-3 pl-2'>
+				<div className='pointer-events-none absolute inset-y-0 left-0 flex items-start pt-4 pl-2'>
 					<svg
 						width='24px'
 						height='24px'
