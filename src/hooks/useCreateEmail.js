@@ -22,10 +22,6 @@ export function useCreateEmail() {
 	const sendPrompt = async (prompt) => {
 		try {
 			const result = await getText(prompt)
-			window.scroll({
-				bottom: 0,
-				behavior: 'smooth'
-			})
 			return result
 		} catch (error) {
 			showError('An error occurred try again.')
