@@ -1,0 +1,14 @@
+---
+import { CreateEmail } from '@components/CreateEmail.jsx'
+import DescriptionPage from '@components/DescriptionPage.astro'
+import Layout from '@components/Layout.astro'
+---
+
+<Layout>
+	<DescriptionPage
+		title='Create Email'
+		subTitle='Create and send your business e-mails with Artificial Intelligence'
+		description='Create beautiful, personalized e-mails with our AI. Use the form below to create your first email'
+	/>
+	<CreateEmail client:visible />
+</Layout>

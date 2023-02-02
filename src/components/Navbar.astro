@@ -1,13 +1,18 @@
 ---
 import BtnDarkMode from './BtnDarkMode.astro'
 import BtnRepository from './BtnRepository.astro'
+import Link from './Link.astro'
 ---
 
 <nav
-	class='mx-auto flex items-center justify-between border-b border-b-gray-300 py-2 px-10 text-center dark:border-b-gray-700 dark:text-gray-400'
+	class='mx-auto flex items-center justify-between border-b border-b-gray-300 py-2 px-5 text-center dark:border-b-gray-700 dark:text-gray-400 md:px-10'
 >
-	<p class='m-0 font-sans font-bold text-gray-800 dark:text-white'>C-email</p>
-	<div class='flex'>
+	<a href='/' class='m-0 font-sans font-bold text-gray-800 dark:text-white'>C-text</a>
+	<div class='flex items-center gap-2'>
+		<Link href='/product-description' name='Product description' />
+		<Link href='/create-email' name='Create email' />
+	</div>
+	<div class='flex items-center gap-2'>
 		<BtnDarkMode />
 		<BtnRepository />
 	</div>

@@ -1,0 +1,15 @@
+---
+import CreateProductDescription from '@components/CreateProductDescription'
+import DescriptionPage from '@components/DescriptionPage.astro'
+import { FormProductDescription } from '@components/FormProductDescription'
+import Layout from '@components/Layout.astro'
+---
+
+<Layout>
+	<DescriptionPage
+		title='Product description'
+		subTitle='Create a product description in just minutes.'
+		description='Create a product description for your app with customized text, photos and thumbnail photos.'
+	/>
+	<CreateProductDescription client:visible />
+</Layout>

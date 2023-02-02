@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getEmail } from '@services/ia.js'
+import { getText } from '@services/ia.js'
 
 export function useCreateEmail() {
 	const [emails, setEmails] = useState(null)
@@ -21,7 +21,7 @@ export function useCreateEmail() {
 
 	const sendPrompt = async (prompt) => {
 		try {
-			const result = await getEmail(prompt)
+			const result = await getText(prompt)
 			window.scroll({
 				bottom: 0,
 				behavior: 'smooth'
@@ -56,5 +56,37 @@ export function useCreateEmail() {
 
 		setIsLoading(false)
 	}
-	return { handleSubmit, emails, isLoading, error, prompt, sendPrompt }
+
+	const handleSubmitProductDescription = async (e) => {
+		e.preventDefault()
+
+		const prompt = {
+			forMessage: getValueInput(e, 'for-message'),
+			descriptionMessage: getValueInput(e, 'description-message'),
+			tone: getValueInput(e, 'tone')
+		}
+
+		setPrompt(prompt)
+		if (validatePrompt(prompt)) {
+			showError('All fields are required')
+			return
+		}
+
+		setEmails(null)
+		setIsLoading(true)
+		const result = await sendPrompt(prompt)
+		setEmails(result)
+
+		setIsLoading(false)
+	}
+
+	return {
+		handleSubmit,
+		handleSubmitProductDescription,
+		sendPrompt,
+		emails,
+		isLoading,
+		error,
+		prompt
+	}
 }
