@@ -9,12 +9,19 @@ module.exports = {
 	// ...
 	overrides: [
 		{
-			files: ['*.astro'],
+			files: ['*.astro', '*.jsx'],
 			parser: 'astro-eslint-parser',
 			parserOptions: {
+				ecmaVersion: 'latest',
+				project: './tsconfig.json',
 				parser: '@typescript-eslint/parser',
-				extraFileExtensions: ['.astro']
+				extraFileExtensions: ['*.astro', '*.jsx'],
+				ecmaFeatures: {
+					jsx: false
+				}
 			},
+			extends: ['plugin:react/recommended'],
+			plugins: ['react'],
 			rules: {}
 		}
 	]
