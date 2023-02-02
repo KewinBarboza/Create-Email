@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useCreateEmail } from '@hooks/useCreateEmail'
 import { IconCopy, IconRefresh, IconTranslate } from '@components/icons'
 
 export function ListEmails({ content, prompt }) {
 	const [copy, setCopy] = useState('Copy')
 	const [textContent, setTextContent] = useState('')
+	const resultRef = useRef(null)
 
 	const [loadingChangeContent, setLoadingChangeContent] = useState(false)
 	const [errorTranslate, setErrorTranslate] = useState(null)
@@ -14,6 +15,7 @@ export function ListEmails({ content, prompt }) {
 	useEffect(() => {
 		setTextContent(content)
 		setErrorTranslate(null)
+		resultRef.current?.lastElementChild?.scrollIntoView()
 	}, [content])
 
 	const copyEmail = (text) => {
@@ -40,7 +42,7 @@ export function ListEmails({ content, prompt }) {
 	if (!content) return ''
 
 	return (
-		<section>
+		<section ref={resultRef}>
 			{content && (
 				<>
 					<h3 className='mt-9 text-left text-xl font-medium text-gray-900 dark:text-white'>
