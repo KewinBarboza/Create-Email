@@ -3,7 +3,7 @@
 
 # C-text
 
-#### Design Your E-mails with Artificial Intelligence
+#### This app is designed to help you create product descriptions and emails that are clear and effective.
 
 🔗 [pagina web](https://ctext.kewinbarboza.com)
 
