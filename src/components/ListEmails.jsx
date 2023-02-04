@@ -15,7 +15,7 @@ export function ListEmails({ content, prompt }) {
 	useEffect(() => {
 		setTextContent(content)
 		setErrorTranslate(null)
-		resultRef.current?.lastElementChild?.scrollIntoView()
+		resultRef.current?.scrollIntoView({ behavior: 'smooth' })
 	}, [content])
 
 	const copyEmail = (text) => {
@@ -42,18 +42,18 @@ export function ListEmails({ content, prompt }) {
 	if (!content) return ''
 
 	return (
-		<section ref={resultRef}>
+		<section>
 			{content && (
 				<>
 					<h3 className='mt-9 text-left text-xl font-medium text-gray-900 dark:text-white'>
-						Generated mail result
+						Generated text
 					</h3>
 					<article className='pt-5 pb-10'>
 						<pre className='font-inherit cursor-text whitespace-pre-wrap break-normal rounded-lg border border-gray-100 p-3 text-lg  text-gray-500 shadow-sm hover:bg-gray-200 hover:text-gray-600 focus:outline-none focus:ring dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300'>
 							{textContent}
 						</pre>
 						{errorTranslate && <p className='m-0 font-bold text-red-500'>{errorTranslate}</p>}
-						<div className='mt-4 flex gap-2'>
+						<div className='mt-4 flex gap-2' ref={resultRef}>
 							<button
 								onClick={() => copyEmail(textContent)}
 								type='button'
