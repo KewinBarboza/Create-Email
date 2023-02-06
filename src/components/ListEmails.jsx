@@ -53,11 +53,11 @@ export function ListEmails({ content, prompt }) {
 							{textContent}
 						</pre>
 						{errorTranslate && <p className='m-0 font-bold text-red-500'>{errorTranslate}</p>}
-						<div className='mt-4 flex gap-2' ref={resultRef}>
+						<div className='mt-4 grid grid-cols-1 gap-2 md:grid-cols-3' ref={resultRef}>
 							<button
 								onClick={() => copyEmail(textContent)}
 								type='button'
-								className='mr-2 mb-2 flex items-center gap-2 rounded-lg bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-blue-500 hover:fill-white hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:text-white  dark:shadow-sm dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800'
+								className='mr-2 mb-2 flex items-center justify-center gap-2 rounded-lg border-2 border-blue-600 bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-gray-200 hover:fill-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-900 dark:text-white  dark:shadow-sm dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-blue-800'
 							>
 								<IconCopy />
 								{copy}
@@ -66,7 +66,7 @@ export function ListEmails({ content, prompt }) {
 								target='_blank'
 								rel='noreferrer'
 								href={`https://www.deepl.com/es/translator#en/es/${textContent}`}
-								className='mr-2 mb-2 flex items-center gap-2 rounded-lg bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-blue-500  hover:fill-white hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700  dark:text-white dark:shadow-sm dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800'
+								className='mr-2 mb-2 flex items-center justify-center gap-2 rounded-lg border-2 border-blue-600 bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-gray-200 hover:fill-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-900 dark:text-white  dark:shadow-sm dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-blue-800'
 							>
 								<IconTranslate />
 								Translate in DeepL
@@ -75,7 +75,7 @@ export function ListEmails({ content, prompt }) {
 								disabled={loadingChangeContent}
 								onClick={() => changeResult()}
 								type='button'
-								className='mr-2 mb-2 flex items-center gap-2 rounded-lg bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-blue-500 hover:fill-white hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:text-white  dark:shadow-sm dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800'
+								className='mr-2 mb-2 flex items-center justify-center gap-2 rounded-lg border-2 border-blue-600 bg-gray-100 px-5 py-2 text-center text-sm text-gray-700 shadow-md hover:bg-gray-200 hover:fill-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-900 dark:text-white  dark:shadow-sm dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-blue-800'
 							>
 								<IconRefresh />
 								{loadingChangeContent ? 'loading...' : 'change result'}
